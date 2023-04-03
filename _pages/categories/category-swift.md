@@ -1,7 +1,7 @@
 ---
-title: "iOS/Swift"
+title: "Swift"
 layout: category
-permalink: /categories/ios-swift/
+permalink: /categories/swift/
 author_profile: true
 taxonomy: Swift
 sidebar:

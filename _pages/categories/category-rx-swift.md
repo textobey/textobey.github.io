@@ -1,9 +1,9 @@
 ---
-title: "Issue"
+title: "RxSwift"
 layout: category
-permalink: /categories/issue/
+permalink: /categories/rx-swift/
 author_profile: true
-taxonomy: Issue
+taxonomy: RxSwift
 sidebar:
   nav: "categories"
 ---
