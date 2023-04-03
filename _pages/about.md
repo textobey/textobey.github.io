@@ -6,7 +6,7 @@ comments: false
 ---
 
 <div>
-    <img src="/assets/images/bookchon.jpg" alt="about_meee" width="70%" min-width="700px" itemprop="image">
+    <img src="/assets/images/bookchon.jpeg" alt="about_meee" width="70%" min-width="700px" itemprop="image">
 </div>
 
 
