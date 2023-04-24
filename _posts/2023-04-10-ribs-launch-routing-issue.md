@@ -24,7 +24,7 @@ LeakDetector는 메모리 누수 없이 정상적으로 UIViewController가 해�
 
 일단 RIBs 아키텍처 환경이 생소하기 때문에 RIBs에 관련된 인터페이스(프로토콜) 구현에서 실수한것이 있는지 확인해 보았으나 아니였고.. 검색을 해보아도 위에 적은것처럼 Detach 하는 과정이 아닌 Attach 해주는 과정에서 발생하고 있어서 완전 미궁으로 빠지던 찰나였어요.
 
-** 내용**
+**내용**
 Assertion failed: <<Book_RIBs.TabBarViewController: 0x13c82da00>: -1188917217535623679> has leaked. Objects are expected to be deallocated at this time: NSMapTable
 
 ```swift
