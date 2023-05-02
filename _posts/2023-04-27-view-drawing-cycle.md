@@ -38,7 +38,7 @@ last_modified_at: 2023-05-02
 > A. Update Cycle에서 호출되는 메서드는(updateConstraints(), layoutSubviews(), draw()) 고비용의 작업이기 때문에, 매번 그때 그때 바로 업데이트 하는것이 효율적이지 못하기 때문인것으로 보여요. Apple에서는 이런 고비용 메서드를 한번에 UpdateCycle에서 처리되도록 설계했어요.
 
 
-만약, Run Loop에 대해 알고 싶다면 [Run Loop]() 포스팅을 확인해주세요 :)
+만약, Run Loop에 대해 알고 싶다면 [Run Loop](https://textobey.github.io/ios/run-loop/) 포스팅을 확인해주세요 :)
 
 
 ### Update를 요청하는 방법
@@ -80,8 +80,8 @@ UpdateCycle에서 수행되는 메서드들을 직접 호출하는 것은 피하
 
 
 ### References
- - https://developer.apple.com/library/archive/documentation/2DDrawing/Conceptual/DrawingPrintingiOS/GraphicsDrawingOverview/GraphicsDrawingOverview.html  
-- https://velog.io/@mmim/iOS-View-Drawing-Cycle  
-- https://green1229.tistory.com/67  
-- https://zeddios.tistory.com/359  
-- https://inuplace.tistory.com/1137  
+ - [https://developer.apple.com/library/archive/documentation/2DDrawing/Conceptual/DrawingPrintingiOS/GraphicsDrawingOverview/GraphicsDrawingOverview.html](https://developer.apple.com/library/archive/documentation/2DDrawing/Conceptual/DrawingPrintingiOS/GraphicsDrawingOverview/GraphicsDrawingOverview.html)
+- [https://velog.io/@mmim/iOS-View-Drawing-Cycle](https://velog.io/@mmim/iOS-View-Drawing-Cycle  )
+- [https://green1229.tistory.com/67](https://green1229.tistory.com/67  )
+- [https://zeddios.tistory.com/359](https://zeddios.tistory.com/359)
+- [https://inuplace.tistory.com/1137](https://inuplace.tistory.com/1137)

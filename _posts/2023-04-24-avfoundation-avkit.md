@@ -77,9 +77,9 @@ AVFoundation을 활용하여 작업을 진행하려면 AVFoundation과 low-level
 
 ## References
 
-- https://developer.apple.com/av-foundation/
-- https://developer.apple.com/documentation/avkit/
-- https://developer.apple.com/documentation/avfoundation/avasset
-- https://developer.apple.com/documentation/avfoundation/avplayer
-- https://ios-development.tistory.com/927
-- https://wnstkdyu.github.io/2018/05/03/avfoundationprogrammingguide/
+- [https://developer.apple.com/av-foundation/](https://developer.apple.com/av-foundation/)
+- [https://developer.apple.com/documentation/avkit/](https://developer.apple.com/documentation/avkit/)
+- [https://developer.apple.com/documentation/avfoundation/avasset](https://developer.apple.com/documentation/avfoundation/avasset)
+- [https://developer.apple.com/documentation/avfoundation/avplayer](https://developer.apple.com/documentation/avfoundation/avplayer)
+- [https://ios-development.tistory.com/927](https://ios-development.tistory.com/927)
+- [https://wnstkdyu.github.io/2018/05/03/avfoundationprogrammingguide/](https://wnstkdyu.github.io/2018/05/03/avfoundationprogrammingguide/)

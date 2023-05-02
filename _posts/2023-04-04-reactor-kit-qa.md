@@ -42,5 +42,5 @@ Reactor는 서로의 존재 여부를 몰라야해요.
 
 # References
 
-https://github.com/ReactorKit/ReactorKit  
-https://eunjin3786.tistory.com/147
+- [https://github.com/ReactorKit/ReactorKit](https://github.com/ReactorKit/ReactorKit)
+- [https://eunjin3786.tistory.com/147](https://eunjin3786.tistory.com/147)
