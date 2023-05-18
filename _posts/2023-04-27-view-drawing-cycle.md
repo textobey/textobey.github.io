@@ -31,10 +31,10 @@ last_modified_at: 2023-05-02
 4. 다음 Drawing Cycle이 되면 업데이트 요청을 받았던 View를 업데이트해요. 위의 2번에 해당하는 과정을 반복하는 것이죠!
 
 
-> Q. 다음 Drawing Cycle은 언제 오는건가요?
+> Q. 다음 Drawing Cycle은 언제 오는건가요?  
 > A. Main Run Loop의 마지막 단계에서 Update cycle이 수행돼요. 이 Update Cycle에서 시스템은 Layout(Size, Position), Display(Color, text, image 등), Constraints를 업데이트하는 작업을 수행해요.
 > ![](https://velog.velcdn.com/images/textobey/post/01d1f6e5-30fa-46a5-b997-a629285efef6/image.png)
-> Q. 왜 그때 그때 업데이트 하지 않고, Update Cycle을 기다리나요?
+> Q. 왜 그때 그때 업데이트 하지 않고, Update Cycle을 기다리나요?  
 > A. Update Cycle에서 호출되는 메서드는(updateConstraints(), layoutSubviews(), draw()) 고비용의 작업이기 때문에, 매번 그때 그때 바로 업데이트 하는것이 효율적이지 못하기 때문인것으로 보여요. Apple에서는 이런 고비용 메서드를 한번에 UpdateCycle에서 처리되도록 설계했어요.
 
 

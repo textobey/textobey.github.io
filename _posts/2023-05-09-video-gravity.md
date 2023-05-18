@@ -1,5 +1,5 @@
 ---
-title: "video-gravity"
+title: "videoGravity 프로퍼티에 대해 알아보자"
 excerpt: "PlayerLayer의 영상 비율에는 어떤 종류가 있을까"
 
 categories:
