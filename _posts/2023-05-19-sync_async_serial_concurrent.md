@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-05-19
-last_modified_at: 2023-05-19
+last_modified_at: 2023-05-21
 ---
 
 앞으로 GCD와 RxSwift 관련 포스팅을 하기 전에 먼저 알아야 할
@@ -68,3 +68,35 @@ Task 1 작업이 끝날때까지 Thread 1에서 Task 2 작업(다음 작업)을 
 
 ![](https://velog.velcdn.com/images/textobey/post/a77f6261-f4c5-4b8f-a218-b1cf1c2e1df7/image.png)
 
+
+## Serial/Concurrent
+
+
+### Serial(직렬)
+
+분산처리를 할때 다른 **하나의 스레드**로만 작업을 분산하는 것이 Serial(직렬)이에요.
+순서가 중요한 작업을 처리할때 사용해요.
+
+![](https://velog.velcdn.com/images/textobey/post/df1de15a-17fe-423a-a674-b037472042f6/image.png)
+
+
+### Concurrent(동시)
+
+분산처리를 할때 **다른 여러개의 스레드**로 분산하는 것이 Concurrent(동시)예요.
+각자 독립적이지만 유사한 여러개의 작업을 중요도나 유사한 성격을 가진 여러개의 작업을 할때 유용해요.
+
+몇 개의 스레드로 분산할지는 시스템이 알아서 결정해요.
+
+![](https://velog.velcdn.com/images/textobey/post/63702313-dc85-46b6-a791-86afca6a019d/image.png)
+
+
+
+### ETC
+
+그렇다면 Async(비동기)와 Concurrent(동시)는 같은 말일까요? 아니죠.
+비동기는 다른 스레드에 작업을 넘겨 시키고, 그 작업이 끝나는것을 기다리지 않고 다음 작업을 하는것이 Async.
+작업을 다른 여러개의 스레드로 분산하는것이 Concurrent.
+이제 확실하게 리마인드가 되네요 :)
+
+
++) iOS 기준으로는 1번(메인) 스레드가 UI와 관련된 작업을 처리하고 있기 때문에 작업을 많이 시킬수록 좋지 않아요. 그렇기 때문에 네트워크 관련된 작업을 다른 스레드로 보내서 처리해야 해요.
