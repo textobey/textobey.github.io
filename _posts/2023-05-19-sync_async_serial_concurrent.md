@@ -1,6 +1,6 @@
 ---
-title: "Sync/Async"
-excerpt: "Sync와 Async에 대해 알아보자"
+title: "Sync/Async, Serial/Concurrent"
+excerpt: "Sync/Async와 Serial/Conccurent 이해"
 
 categories:
   - iOS
