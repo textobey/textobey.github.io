@@ -3,9 +3,9 @@ title: "프로젝트를 Storyboard 없이 작업하는 방법"
 excerpt: "Storyboard 없이 Code Base로만 작업하는 방법을 알아보자"
 
 categories:
-  - Swift
+  - iOS
 tags:
-  - [Swift, Xcode]
+  - [iOS, Xcode]
 
 permalink: /ios/how-to-without-storyboard/
 

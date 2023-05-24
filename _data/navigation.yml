@@ -20,10 +20,6 @@ main:
 categories:
   - title: "iOS"
     url: /categories/ios/
-  - title: "Swift"
-    url: /categories/swift/
-  - title: "SwiftUI"
-    url: /categories/swift-ui/
   - title: "RxSwift"
     url: /categories/rx-swift/
   - title: "Architecture"
