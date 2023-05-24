@@ -22,7 +22,15 @@ categories:
     url: /categories/ios/
   - title: "Swift"
     url: /categories/swift/
+  - title: "SwiftUI"
+    url: /categories/swift-ui/
   - title: "RxSwift"
     url: /categories/rx-swift/
+  - title: "Architecture"
+    url: /categories/architecture/
   - title: "Issue"
     url: /categories/issue/
+  - title: "CS"
+    url: /categories/cs/
+  - title: "ETC"
+    url: /categories/etc/
