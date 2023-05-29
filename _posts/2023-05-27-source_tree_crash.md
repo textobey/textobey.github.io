@@ -3,7 +3,7 @@ title: "Sourcetree 응용 프로그램이 예기치 않게 종료되었습니다
 excerpt: "Sourcetree가 반복적으로 Crash가 발생하는 이유"
 
 categories:
-  - ETC
+  - Issue
 tags:
   - [Git, Sourcetree]
 
