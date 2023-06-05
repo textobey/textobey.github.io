@@ -1,6 +1,6 @@
 ---
 title: "AVFoundation과 AVKit"
-excerpt: "AVFoundation과 AVKit으로 무엇을 할 수 있을까"
+excerpt: "AVFoundation, AVKit 프레임워크 분석"
 
 categories:
   - iOS
@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-04-24
-last_modified_at: 2023-04-24
+last_modified_at: 2023-06-05
 ---
 
 이번 포스팅에서는 Apple 플랫폼에서 미디어와 관련된 프레임워크인 AVFoundation, AVKit에 대해 다뤄보려고 해요 :)
@@ -26,7 +26,7 @@ last_modified_at: 2023-04-24
 >AVFoundation을 사용하면 QuickTime 영화 및 MPEG-4 파일을 쉽게 재생, 생성 및 편집하고, HLS(HTTP Live Stream)를 재생하고, 앱에 강력한 미디어 기능을 구축할 수 있다고 소개하고 있어요.
 
 그리고 [Document](https://developer.apple.com/documentation/avfoundation/)에서는 구체적으로 어떤 작업을 할 수 있는지에 대해 설명하고 있어요.
-- 시청각 Assets 작업
+- 시청각 [Assets](###AVAsset) 작업
 - Device 카메라 제어
 - 오디오 처리
 - 시스템 오디오 상호작용
@@ -40,6 +40,74 @@ AVAsset은 AVAssetTrack 타입의 다양한 Track이 모여 만들어지는 것�
 
 AVAsset은 오디오, 비디오 트랙, 제목, 길이, 자연스러운 영상 사이즈 등 다양한 데이터의 집합체가 되기 때문에 AVFoundation에서 가장 중요한 타입으로 볼 수도 있겠네요!
 
+### AVPlayer
+
+: 플레이어 미디어 Asset의 playback과 timing(시간)을 관리하는 `컨트롤러` 오브젝트예요.
+<span style="color: #808080">(이 말은 AVPlayer는 비시각적인 오브젝트로 이것 하나만 가지고는 직접적인 영상 표시가 불가능하다고 할 수 있음)</span>
+
+AVPlayer 객체는 AVAsset의 전반적인 `playback` 을 조절하는데 사용해요.
+
+- AVPlayerQuickTime 영화 및 MP3 오디오 파일과 같은 로컬 및 원격 파일 기반 미디어 또는 HLS를 사용하여 제공되는 시청각 미디어를 재생해요.
+- 한 번에 하나의 미디어 Asset을 재생해요.
+또, 추가 미디어 자산을 재생할 수는 있지만 한 번에 하나의 미디어 자산 재생만 관리해요. 
+[replaceCurrentItem(with:)](https://developer.apple.com/documentation/avfoundation/avplayer/1390806-replacecurrentitem) 메서드를 사용하여 추가 미디어 자산을 재생할 수 있어요.
+- 순차적으로 재생되는 미디어 Asset의 대기열을 만들고 관리하는 [AVQueuePlayer](https://developer.apple.com/documentation/avfoundation/avqueueplayer) 하위 클래스를 제공해요.
+
+### AVPlayerItem
+
+: 시간과 Presentation(표시되는 영상에 대한 상태?)정보를 가지고 있는 오브젝트예요.
+
+**AVAsset은 정적인 상태**(총 재생 시간, 생성 날짜)를 **관리**하고,
+**AVPlayerItem은 동적인 상태** (presentation state, 현재 시간, 현재까지 재생된 시간 등)을 관리해요.
+
+AVAssetTrack이 모여 하나의 AVAsset을 이루는것처럼,
+AVPlayerItem도 여러개의 AVPlayerItemTrack이 모여 AVPlayerItem을 구성해요.
+
+이 Track에 접근해서 오디오 또는 비디오 편집이 가능하게 해요.
+
+### Observing AVPlayer, AVPlayerItem State
+
+AVPlayer와 AVPlayerItem은 시간과 재생 또는 Presentation에 대한 상태 정보를 가지고 있어요.
+
+이 정보는 시시각각 변하는 정보이기 때문에, 이 상태값이 변경되었을때 알맞은 처리를 해주기 위해서 Apple에서는 KVO를 통해 상태값을 구독하여 대응할 수 있도록 가이드하고 있어요.
+
+> 
+- [Observing Playback State](https://developer.apple.com/documentation/avfoundation/media_playback/observing_playback_state)
+- [AVPlayer Observations](https://developer.apple.com/documentation/avfoundation/avplayer)
+![](https://velog.velcdn.com/images/textobey/post/3882f171-11a4-439b-b34c-b35619ff32d5/image.png)
+
+
+
+### AVPlayerLayer
+
+: CALayer의 서브 클래스이고, 동영상을 재생시킬 수 있는 Layer 오브젝트예요.
+<span style="color: #808080">(+ AVPlayerLayer는 AVFoundation 프레임워크 레벨에서 Custom Player Component를 구현하기 위한 바탕이 되는 Layer)</span>
+
+AVPlayerLayer라는 시각적인 객체 + 비시각적인 객체(AVPlayer, AVPlayerItem)을 합쳐 미디어를 재생하고 볼 수 있는 완성된 형태의 플레이어를 비로소 구현할 수 있는거죠.
+
+Apple에서는 AVPlayerLayer를 사용하기 위한 일반적인 방법으로 UIView의 layerClass에 접근해 CALayer 타입에서 AVPlayerLayer 타입으로 변경하여 예제처럼 백업 레이어로 사용하도록 가이드하고 있어요.
+
+``` swift
+/// A view that displays the visual contents of a player object.
+class PlayerView: UIView {
+
+    // Override the property to make AVPlayerLayer the view's backing layer.
+    override static var layerClass: AnyClass { AVPlayerLayer.self }
+    
+    // The associated player object.
+    var player: AVPlayer? {
+        get { playerLayer.player }
+        set { playerLayer.player = newValue }
+    }
+    
+    private var playerLayer: AVPlayerLayer { layer as! AVPlayerLayer }
+}
+```
+
+
+위에서 설명된 각 오브젝트가 모여, 아래 그림처럼 각각의 오브젝트가 연결된 객체의 의존성을 필요로 한 상태로 생성되는 구조가 돼요.
+
+![](https://velog.velcdn.com/images/textobey/post/d0b6cafa-7e12-4457-b5eb-64d07c77d86b/image.png)
 
 ## AVKit
 
@@ -52,6 +120,8 @@ AVKit 안에 있는 AVPlayerViewController 클래스는 AVFoundation에 직접�
 > <img width="500" alt="2023-04-20 3 46 55" src="https://velog.velcdn.com/images/textobey/post/10385ac2-0c6f-44fe-84c9-e895745ea56a/image.jpeg">
 
 AVKit 프레임워크를 통해 따로 미디어 플레이어 UI를 커스텀하지 않고 주어지는 그대로 사용하여도 완성도 있는 미디어 플레이어를 사용자에게 제공할 수 있기 때문에 정말 강력하고도 좋은거 같아요.
+
+### AVPlayerViewController
 
 ## iOS AVFoundation Stack
 
@@ -74,9 +144,7 @@ AVFoundation을 활용하여 작업을 진행하려면 AVFoundation과 low-level
 를 사용하여 애플리케이션의 오디오 동작을 구상할 수도 있다고 하네요.
 
 
-
-## References
-
+### References
 - [https://developer.apple.com/av-foundation/](https://developer.apple.com/av-foundation/)
 - [https://developer.apple.com/documentation/avkit/](https://developer.apple.com/documentation/avkit/)
 - [https://developer.apple.com/documentation/avfoundation/avasset](https://developer.apple.com/documentation/avfoundation/avasset)
