@@ -3,9 +3,9 @@ title: "RIBs LaunchRouting을 구성하며 겪은 시행착오"
 excerpt: "특이한게 궁금한 청개구리가 겪은 불필요한 시행착오"
 
 categories:
-  - iOS
+  - Issue
 tags:
-  - [RIBs]
+  - [Architecture, RIBs]
 
 permalink: /ios/ribs-launch-routing-issue/
 

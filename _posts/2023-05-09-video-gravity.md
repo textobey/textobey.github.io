@@ -5,7 +5,7 @@ excerpt: "PlayerLayer의 영상 비율에는 어떤 종류가 있을까"
 categories:
   - iOS
 tags:
-  - [iOS]
+  - [iOS, AVFoundation]
 
 permalink: /ios/video-gravity/
 

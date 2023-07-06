@@ -3,7 +3,7 @@ title: "UITableViewAlertForLayoutOutsideViewHierarchy 경고"
 excerpt: "경고가 발생하는 원인과 해결 방법은?"
 
 categories:
-  - RxSwift
+  - Issue
 tags:
   - [RxSwift, iOS]
 

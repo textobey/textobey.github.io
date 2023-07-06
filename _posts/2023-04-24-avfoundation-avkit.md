@@ -5,7 +5,7 @@ excerpt: "AVFoundation, AVKit 프레임워크 분석"
 categories:
   - iOS
 tags:
-  - [iOS]
+  - [iOS, AVFoundation]
 
 permalink: /ios/avfoundation-avkit/
 

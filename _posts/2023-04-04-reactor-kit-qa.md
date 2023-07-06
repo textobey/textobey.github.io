@@ -3,7 +3,7 @@ title: "ReactorKit을 공부하며 생겼던 궁금점들"
 excerpt: "ReactorKit을 공부하면서 궁금했던 내용을 정리해보자"
 
 categories:
-  - iOS
+  - Architecture
 tags:
   - [Architecture, ReactorKit]
 

@@ -3,9 +3,9 @@ title: "UINavigationController에서 자식 RIB를 detach 하는 방법"
 excerpt: "어떻게하면 자식 RIB을 정상적으로 detach 시킬 수 있을까"
 
 categories:
-  - iOS
+  - Architecture
 tags:
-  - [RIBs]
+  - [Architecture, RIBs]
 
 permalink: /ios/how-to-detach-child-when-popviewcontroller/
 

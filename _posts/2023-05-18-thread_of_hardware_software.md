@@ -3,9 +3,9 @@ title: "하드웨어 스레드 vs 소프트웨어 스레드"
 excerpt: "두 개의 스레드에는 어떤 차이가 있을까?"
 
 categories:
-  - iOS
+  - CS
 tags:
-  - [iOS]
+  - [CS]
 
 permalink: /ios/thread_of_hardware_software/
 

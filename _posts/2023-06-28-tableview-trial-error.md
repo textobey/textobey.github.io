@@ -3,7 +3,7 @@ title: "UITableView 시행착오"
 excerpt: "UITableViewCell의 isSelected를 관리하는법"
 
 categories:
-  - RxSwift
+  - Issue
 tags:
   - [RxSwift, iOS]
 
