@@ -1,6 +1,6 @@
 ---
-title: "Xcode 커스텀 템플릿 만들기"
-excerpt: "RIBs 템플릿 기반의 ReactorKit을 더한 템플릿!"
+title: "UIButton.isSelected/isEnabled issue"
+excerpt: "isSelected, isEnabled를 같이 사용하면 안될까?"
 
 categories:
   - Issue

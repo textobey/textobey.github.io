@@ -1,9 +1,9 @@
 ---
-title: "UILabel LineBreakMode 이슈"
-excerpt: "UILabel에 개행(\n)이 포함됐을때 생기는 문제"
+title: "UILabel LineBreakMode 트러블 슈팅"
+excerpt: "UILabel에 개행 문자가 포함 됐을때 생기는 문제"
 
 categories:
-  - iOS
+  - Issue
 tags:
   - [iOS, UILabel, Issue]
 
