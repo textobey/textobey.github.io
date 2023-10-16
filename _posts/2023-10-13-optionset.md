@@ -7,7 +7,7 @@ categories:
 tags:
   - [iOS]
 
-permalink: /ios/ㅐ/
+permalink: /ios/optionset/
 
 toc: true
 toc_sticky: true
