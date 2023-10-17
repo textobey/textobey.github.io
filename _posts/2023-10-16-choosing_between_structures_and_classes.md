@@ -1,6 +1,6 @@
 ---
 title: "Choosing Between Structures and Classes"
-excerpt: "구조체와 클래스중에 어떤걸 쓸까?"
+excerpt: "Class와 Struct 중 어떤걸 사용할까?"
 
 categories:
   - iOS
