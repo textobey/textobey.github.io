@@ -1,6 +1,6 @@
 ---
 title: "Driver vs Signal"
-excerpt: "Trait의 특징과 차이점을 알아보자"
+excerpt: "특징과 차이점을 알아보자(1)"
 
 categories:
   - RxSwift
@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2024-02-29
-last_modified_at: 2024-02-29
+last_modified_at: 2024-03-06
 --- 
 
 
